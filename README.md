@@ -25,7 +25,7 @@ The application has been deployed to heroku and is available without installatio
 * Run `nosetests` in the directory
 
 ## The Stack
-This application is written with python and flask.  Flask was chosen for its simplicity as a micro-framework given that 
+This application is written with python and flask.  [Flask](http://flask.pocoo.org/docs/0.11/) was chosen for its simplicity as a micro-framework given that 
 the web application only needed 1 route to process the input from the user.  Additionally, the 
 form is extremely simplistic requiring very little validation.  The core technology driving the application is
 the regex that allows parsing of phone numbers in the block of text provided.
