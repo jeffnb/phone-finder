@@ -6,7 +6,13 @@ import phone_parser
 
 app = Flask(__name__)
 
+
 def validate_text(text):
+    """
+    Simple function to validate the text input
+    :param text: input from the form to ensure is appropriate size
+    :return: error string
+    """
     error = None
     text = text.strip()
     if len(text) < 10:
@@ -19,6 +25,11 @@ def validate_text(text):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """
+    Main page will process returning just the form as well as the POST method
+    to return either extracted numbers or errors
+    :return: rendered template
+    """
 
     if request.method == 'POST':
         text_body = request.form['data']

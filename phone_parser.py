@@ -2,6 +2,7 @@ import re
 
 REGEX = r'\(?(\d{3})\)?[\s\.\-]*(\d{3})[\s\.\-]*(\d{4})'
 
+
 def parse_text(text):
     """
     Takes a string and returns a list of matching numbers
@@ -19,9 +20,10 @@ def format_numbers(number_tuples):
     :param number_tuples: list of tuples containing the 3 parts of a number
     :return: List of formatted phone number string
     """
+    format_string = "({0}) {1}-{2}"
     result = []
 
     for number in number_tuples:
-        result.append("({0}) {1}-{2}".format(*number))
+        result.append(format_string.format(*number))
 
     return result

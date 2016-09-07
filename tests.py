@@ -1,6 +1,7 @@
 from unittest import TestCase
 from phone_parser import parse_text, format_numbers
 
+
 class TestPhoneParsing(TestCase):
 
     number = ("702", "555", "1212")
@@ -77,3 +78,12 @@ class TestPhoneParsing(TestCase):
         self.assertEqual("(850) 555-1215", numbers[1],
                          msg="Second phone number incorrectly formatted")
 
+    def test_formatter_empty_list(self):
+        """
+        Test the instance where there are no numbers in the list and ensure
+        no errors occur.
+        """
+        number_tuples = parse_text("")
+        numbers = format_numbers(number_tuples)
+
+        self.assertEquals(0, len(numbers))
