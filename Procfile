@@ -1,1 +1,1 @@
-gunicorn phone-finder:app --log-file -
+web: gunicorn phone-finder:app --log-file -
